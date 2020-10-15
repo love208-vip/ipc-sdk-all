@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.ipc-sdk</groupId>
+    <artifactId>ipc-sdk-all</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.0.v20201015-RELEASE</version>
+    <name>ipc-sdk</name>
+
+    <description>ipc-sdk-all 是整合大华海康威视等各大网络摄像头厂商的SDK封装</description>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.love208.vip</url>
+        </license>
+    </licenses>
+
+    <!-- 调用C++库包 -->
+    <dependencies>
+        <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna</artifactId>
+            <version>5.6.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                    <forceJavacCompilerUse>true</forceJavacCompilerUse>
+
+                    <!-- JDK 1.8 后没有 rt.jar，这里添加上去 -->
+                    <!--<compilerArguments>
+                        <bootclasspath>${env.JAVA_HOME}\jre\lib\rt.jar;${env.JAVA_HOME}\jre\lib\jce.jar</bootclasspath>
+                    </compilerArguments>-->
+
+                    <!--<compilerArgs>
+                        <arg>-g</arg>
+                        &lt;!&ndash;<arg>-g:none</arg> <arg>-O</arg> &ndash;&gt;
+                    </compilerArgs>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
